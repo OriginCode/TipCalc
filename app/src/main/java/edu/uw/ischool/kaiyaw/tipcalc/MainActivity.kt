@@ -42,11 +42,11 @@ class MainActivity : AppCompatActivity() {
 
                 val cleanString = s?.replace("""[$,.]""".toRegex(), "") ?: ""
                 Log.i("main", cleanString)
-//                if (cleanString == "00") {
-//                    edtAmount.setText("")
-//                    edtAmount.addTextChangedListener(this)
-//                    return
-//                }
+                if (cleanString == "00") {
+                    edtAmount.setText("")
+                    edtAmount.addTextChangedListener(this)
+                    return
+                }
                 current = cleanString.toBigDecimal()
                 val formatted = usdFormatter.format(current.divide(BigDecimal(100)))
 
